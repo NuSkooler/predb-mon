@@ -7,7 +7,6 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "chalk": "^4.1.0",
-    "moment": "^2.29.1",
     "ws": "^7.4.1"
   }
 }

@@ -26,7 +26,11 @@ const monitor = (config) => {
                     console.log(msg);
                 }
 
-                if (config.categoryFilter.test(msg.row.cat)) {
+                const filter = config.categoryFilter().test(msg.row.cat);
+                if (filter) {
+                    if (config.debug) {
+                        console.log(`Dropping ${msg.row.name} due to category filter ${msg.row.cat}`);
+                    }
                     return;
                 }
 

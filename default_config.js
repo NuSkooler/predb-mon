@@ -19,7 +19,7 @@ const actionIndicators = {
 //
 module.exports = {
     debug : false,
-    categoryFilter : /XXX/g, //  drop all XXX shit
+    categoryFilter : () => /XXX/g, //  drop all XXX shit
     formatter : (msg) => {
         const indicator = actionIndicators[msg.action];
         msg = msg.row;

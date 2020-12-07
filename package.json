@@ -1,0 +1,13 @@
+{
+  "name": "predb-mon",
+  "version": "1.0.0",
+  "description": "A stupid simple PreDB text mode monitor.",
+  "author": "Bryan Ashby <bryan@l33t.codes>",
+  "main": "predb-mon.js",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "moment": "^2.29.1",
+    "ws": "^7.4.1"
+  }
+}

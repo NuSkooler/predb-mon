@@ -4,6 +4,8 @@ A stupid simple PreDB text mode monitor.
 # Installation
 ```bash
 git clone https://github.com/NuSkooler/predb-mon.git
+cd predb-mon
+
 # with yarn
 yarn
 # with npm

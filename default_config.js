@@ -1,11 +1,10 @@
 const chalk = require('chalk');
-const moment = require('moment');
 
 const actionIndicators = {
-    insert      : chalk.greenBright('+'),
-    update      : chalk.cyanBright('^'),
+    insert      : chalk.green('+'),
+    update      : chalk.cyan('^'),
     delete      : chalk.grey('-'),   //  Should Not Happen (TM)
-    nuke        : chalk.redBright('-'),
+    nuke        : chalk.red('-'),
     unnuke      : chalk.green('+'),
     modnuke     : chalk.red('-'),
     delpre      : chalk.red('-'),
@@ -25,9 +24,10 @@ module.exports = {
         const indicator = actionIndicators[msg.action];
         msg = msg.row;
 
-        const preAt = moment.unix(msg.preAt).format('MMM Do hh:mm a');
+        //  you could parse the preAt UNIX timestamp with moment for e.g.:
+        //const preAt = moment.unix(msg.preAt).format('MMM Do hh:mm a');
 
-        let out = chalk`${indicator} {magenta ${msg.name}} {yellow ${msg.cat}} {blue [} {cyan ${preAt}} {blue ]}`;
+        let out = chalk`${indicator} {magenta ${msg.name}} {yellow ${msg.cat}}`;
         if (msg.url) {
             out += chalk`\r\n  {grey >} {white ${msg.url}}`
         }

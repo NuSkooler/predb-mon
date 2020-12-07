@@ -21,9 +21,15 @@ const monitor = (config) => {
         ws.on('message', msg => {
             try {
                 msg = JSON.parse(msg);
+
                 if (config.debug) {
                     console.log(msg);
                 }
+
+                if (config.categoryFilter.test(msg.row.cat)) {
+                    return;
+                }
+
                 console.log(config.formatter(msg));
             } catch (e) {
                 console.error(e);
